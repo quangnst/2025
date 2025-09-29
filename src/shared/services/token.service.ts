@@ -24,13 +24,13 @@ export class TokenService {
   }
 
   verifyAccessToken(token: string) {
-    return this.jwtService.signAsync(token, {
+    return this.jwtService.verifyAsync(token, {
       secret: envConfig.ACCESS_TOKEN_SECRET,
     });
   }
 
   verifyRefreshToken(token: string) {
-    return this.jwtService.signAsync(token, {
+    return this.jwtService.verifyAsync(token, {
       secret: envConfig.ACCESS_TOKEN_SECRET,
     });
   }
